@@ -1,0 +1,214 @@
+.Toastify__toast--error {
+    border: 1px solid #EB5757;
+    border-radius: 50px !important;
+    background: #FAE1E2 !important;
+    position: absolute;
+    left: -440%;
+    width:80%;
+}
+.Toastify__toast--error::after {
+  position: absolute;
+  color: #333333;
+  font-size: 15px;
+  font-weight: 700;
+  left:265px;
+  padding-top: 14px !important;
+}
+.Toastify__toast--error::before {
+  position:relative; 
+  z-index:100000;
+  left:12px;
+  top:6px;
+}
+.Toastify__toast--success {
+  border: 1px solid #3A9EA5 !important;
+  border-radius: 50px !important;
+  background: #F0F9FA !important;
+  position: absolute;
+    left: -440%;
+    width:80%;
+}
+.Toastify__toast--success::before {
+  position:relative; 
+  z-index:100000;
+  left:12px;
+  top:6px;
+}
+.Toastify__toast--success::after {
+  position: absolute;
+  color: #333333;
+  font-size: 15px;
+  font-weight: 700;
+  left:265px;
+  padding-top: 14px !important;
+}
+.Toastify__toast--warning {
+  border: 1px solid #E78326  !important;
+  border-radius: 50px !important;
+  background: #FADFC5 !important;
+  
+}
+.Toastify__toast--warning::before {
+  position:relative; 
+  z-index:100000;
+  left:12px;
+  top:6px;
+}  
+.Toastify__toast--warning::after {
+  position: absolute;
+  color: #E78326;
+  font-size: 15px;
+  font-weight: 700;
+  left:100px;
+  padding-top: 14px !important;
+}
+.Toastify__toast-body {
+  color: #444C63    ;
+  font-size: 16px;
+  padding-left: 20px;
+  line-height: 20px;
+  padding: 0px;
+  padding-top: 25px;
+  width: 100%;
+  font-weight: 400;
+  margin-left: 25px !important;
+} 
+.Toastify__toast > button>  svg {
+    display: none;
+}
+
+body{
+min-height: 100%;
+height: 100%;
+font-weight: lighter;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+-webkit-font-smoothing: subpixel-antialiased;
+}
+.a{color: #b1c;text-decoration: none;}
+.p{display: block;width: 300px;margin-left: -180px;margin-top: -5px;}
+.p a{color: #a4a4a4;font-size: 10px;text-decoration: none;}
+.p a:hover{color: #be1dcc;border-bottom: 1px solid gray}
+#warp{
+position: initial;
+width: 500px;
+height: 550px;
+text-align:center;
+color:white;
+margin-left: 13%;
+margin-top: -30%;
+padding-bottom: 30%;
+}
+.form{
+display: inline-block;
+width: 500px;
+height: 300px;
+}
+.h1{
+    margin: 0;
+padding: 0;
+outline: 0;
+border: 0;
+background: transparent;
+vertical-align: baseline;
+font-size: 100%;
+color: #b6b6b6;
+font-weight: bolder;
+padding-left: 15%;
+font-size: 60px;
+}
+.h3{
+    margin: 0;
+padding: 0;
+outline: 0;
+border: 0;
+background: transparent;
+vertical-align: baseline;
+font-size: 100%;
+    color: #b6b6b6;
+    font-weight: bolder;
+    font-size: 100%;
+    width:100px;
+    }
+.admin{
+height: 550px;
+float: left;
+width: 300px;
+border-right: 1px solid #333333;
+text-align: left;
+left:-40px;
+top:50px;
+transition: all 200ms ease-in 100ms;
+}
+.cms{
+height: 120px;
+top: 520px;
+left: -200px;
+float: right;
+width: 130px;
+text-align: center;
+transition: all 200ms ease-in 100ms;
+}
+.admin,.cms{
+position: relative;
+display: block;
+overflow: hidden;
+transform: rotate(30deg);
+}
+.cms h1{
+margin-left: -10px;
+color:#838385;
+}
+.roti,.rota{
+position: relative;
+display: block;
+transform: rotate(-30deg);
+}
+.admin:hover h1,
+.cms:hover h1{color: #be1dcc;}
+.rota{margin-top: 80px;margin-left: 35px;}
+.roti{margin-top: 80px;margin-right: 55px;}
+.input,.button{
+    margin: 0;
+padding: 0;
+outline: 0;
+border: 0;
+background: transparent;
+vertical-align: baseline;
+font-size: 100%;
+margin: 4px;
+padding: 15px 6px;
+width: 350px;
+background: white;
+color:black;
+font-size: 14px;
+transition: all 1s ease-out;
+padding-bottom: 10%;
+}
+.button{
+    margin: 0;
+padding: 0;
+outline: 0;
+border: 0;
+background: transparent;
+vertical-align: baseline;
+font-size: 120%;
+margin-left: -230px;
+background:#303030;
+color:white;
+text-align: right;
+cursor: pointer;
+transition: all 1s ease-out;
+}
+.button:hover{
+    margin: 0;
+padding: 0;
+outline: 0;
+border: 0;
+background: transparent;
+vertical-align: baseline;
+font-size: 100%;
+background:#be1dcc;
+transition: all 0.3s ease-in;
+}
+.input:hover{box-shadow: inset 0 0 5px rgba(190,29,204,0.6) }
+.input:focus{background: whitesmoke;color: #b1c}

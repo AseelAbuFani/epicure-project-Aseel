@@ -1,0 +1,46 @@
+
+  input.nosubmit {
+    border: 1px solid #555;
+    width: 100%;
+    padding: 9px 4px 9px 40px;
+    background: transparent url("C:\Tsofen\epicure-project\src\assets\SearchIcon.png") no-repeat 13px center;
+  
+    }
+  
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 400px;
+      font-family: sans-serif;
+     
+      
+    }
+    
+    .tabs__label {
+      padding: 10px 16px;
+      cursor: pointer;
+    }
+    
+    .tabs__radio {
+      display: none;
+    }
+    
+    .tabs__content {
+      order: 1;
+      width: 100%;
+      height:100%;
+      line-height: 1.5;
+      font-size: 0.9em;
+      display: none;
+    }
+    
+    .tabs__radio:checked + .tabs__label {
+      font-weight: bold;
+      
+      border-bottom: 2px solid rgba(222, 146, 0, 0.9);
+    }
+    
+    .tabs__radio:checked + .tabs__label + .tabs__content {
+      display: block;
+    }
+    
