@@ -40,7 +40,7 @@ return(
         <div className="tabs__content">
         <table >
       <tr>
-         <th>Name,</th>
+         <th>Name</th>
          <th>Image</th>
          <th>ID</th>
          <th>Chef</th>
