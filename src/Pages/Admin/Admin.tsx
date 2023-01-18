@@ -18,8 +18,8 @@ const Admin =()=>{
     const [name, setName] = useState('');
     const [_id, setID] = useState('');
 
-    const navigate = useNavigate();
-
+    const navigate = useNavigate() ;
+ 
     const updateFields = async () => {
         const args = {_id,name};
         const resopnse = await axios.post('http://localhost:3001/api/restaurants/updateRestaurant', args);
@@ -40,7 +40,7 @@ return(
         <div className="tabs__content">
         <table >
       <tr>
-         <th>Name</th>
+         <th>Name,</th>
          <th>Image</th>
          <th>ID</th>
          <th>Chef</th>
