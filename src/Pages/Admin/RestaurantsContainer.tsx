@@ -1,5 +1,8 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { write } from 'fs';
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { Button } from 'react-native';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
@@ -31,6 +34,20 @@ export const RestaurantsContainer = () => {
     const tmp = !btnDisplay;
     setBtnDisplay(tmp);
   };
+
+  const notEditableStyle = {
+    background: 'none',
+    border: 'none',
+    textAlign: 'center',
+  };
+  const editableStyle = {
+    background: 'none',
+    border: 'solid',
+    textAlign: 'center',
+  };
+
+  const finalStyle = btnDisplay ? notEditableStyle : editableStyle;
+
   return (
     <div className="tabs__content">
       <table>
@@ -46,26 +63,26 @@ export const RestaurantsContainer = () => {
 
         {restaurants.map((res: any, key: number) => {
           return (
-            <tr key={key}>
+            <tr key={res._id}>
               <td className="col col-1">
                 <input
-                  style={{ background: 'none', border: 'none' }}
-                  onChange={(e) => setName(e.target.value)}
+                  type="text"
+                  style={{
+                    background: 'none',
+                    border: 'solid',
+                    textAlign: 'center',
+                  }}
+                  defaultValue={res.name}
+                  onChange={(e) => {
+                    setName(e.currentTarget.value);
+                    setID(res._id);
+                  }}
                 />{' '}
-                {res.name}
               </td>
               <td className="col col-2">
                 <img className="imgInAdminPage" src={res.image} />
               </td>
-              <td className="col col-3">
-                {' '}
-                <input
-                  value={_id}
-                  style={{ background: 'none', border: 'none' }}
-                  onChange={() => setID(res._id)}
-                />
-                {res._id}
-              </td>
+              <td className="col col-3"> {res._id}</td>
               <td className="col col-3">{res.chef}</td>
               <td className="col col-3">{res.open}</td>
               <td className="col col-3">
