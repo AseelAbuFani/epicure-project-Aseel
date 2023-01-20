@@ -1,4 +1,3 @@
-
 @media screen and (min-width: 100px) {
   .imgInAdminPage {
     border: 3px solid;
@@ -8,10 +7,18 @@
     width: 100px;
     border-radius: 50%;
   }
-  .buttonToAdmin{
+  .buttonToAdmin {
     background-color: #d3eff1;
     border-radius: 50%;
+    width: 4rem;
   }
+  .cancel {
+    background-color: #ff0707;
+  }
+  .save {
+    background-color: #07ff07;
+  }
+
   td:first-child {
     background-color: #c8e7ea;
     border-bottom: 1px solid #91ced4;
