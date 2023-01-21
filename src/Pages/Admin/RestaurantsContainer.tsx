@@ -1,3 +1,4 @@
+import { TimePicker } from '@mui/x-date-pickers';
 import axios from 'axios';
 import { write } from 'fs';
 import React from 'react';
@@ -10,11 +11,12 @@ export const RestaurantsContainer = () => {
   const restaurants = useSelector((state: any) => state.restaurants.value);
   const [name, setName] = useState('');
   const [_id, setID] = useState('');
+  const [open, setOpen] = useState('');
   const [image, setImage] = useState('');
   const dishes = useSelector((state: any) => state.dishes.value);
   const [btnDisplay, setBtnDisplay] = useState(true);
   const updateFields = async () => {
-    const args = { _id, name, image };
+    const args = { _id, name, image, open };
     const resopnse = await axios.post(
       'http://localhost:3001/api/restaurants/updateRestaurant',
       args
@@ -45,19 +47,24 @@ export const RestaurantsContainer = () => {
     border: 'solid',
     textAlign: 'center',
   };
+  const setter = (ID: any) => {
+    const Founded = restaurants.find((e: any) => e._id === ID);
+    setName(Founded._id);
+  };
 
   const finalStyle = btnDisplay ? notEditableStyle : editableStyle;
 
   return (
     <div className="tabs__content">
-      <table>
+      <table style={{ width: '100%' }}>
         <tr>
           <th>Name</th>
           <th>Image</th>
           <th>ID</th>
           <th>Chef</th>
-          <th>Houers open</th>
+          <th>Hours open</th>
           <th>Dishes of Restaurant</th>
+
           <th></th>
         </tr>
 
@@ -69,13 +76,15 @@ export const RestaurantsContainer = () => {
                   type="text"
                   style={{
                     background: 'none',
-                    border: 'solid',
+                    border: 'none',
                     textAlign: 'center',
                   }}
                   defaultValue={res.name}
                   onChange={(e) => {
-                    setName(e.currentTarget.value);
+                    setName(e.target.value);
                     setID(res._id);
+                    setImage(image === '' ? res.image : image);
+                    setOpen(open === '' ? res.open : open);
                   }}
                 />{' '}
               </td>
@@ -84,7 +93,23 @@ export const RestaurantsContainer = () => {
               </td>
               <td className="col col-3"> {res._id}</td>
               <td className="col col-3">{res.chef}</td>
-              <td className="col col-3">{res.open}</td>
+              <td className="col col-3">
+                <input
+                  type="text"
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    textAlign: 'center',
+                  }}
+                  defaultValue={res.open}
+                  onChange={(a) => {
+                    setOpen(a.target.value);
+                    setID(res._id);
+                    setName(name === '' ? res.name : name);
+                    setImage(image === '' ? res.image : image);
+                  }}
+                />{' '}
+              </td>
               <td className="col col-3">
                 {res.dishesRestaurant.map((dishRes: any) =>
                   dishes.map((dish: any) =>
